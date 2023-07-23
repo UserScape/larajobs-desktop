@@ -1,0 +1,17 @@
+<?php
+
+use App\Models\Jobs;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/native/menu-bar-home', fn () => view('menu-bar-home', ['jobs' => Jobs::latest()->take(10)->get()]))->name('menu-bar-home');
