@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Services\FeedService;
+use Illuminate\Support\Facades\Artisan;
 use Native\Laravel\Events\App\OpenedFromURL;
 
 class HandleRefreshFeedLink
@@ -23,7 +24,7 @@ class HandleRefreshFeedLink
     public function handle(OpenedFromURL $event): void
     {
         if ($event->url === config('nativephp.deeplink_scheme').'://refresh') {
-            $this->feedService->refresh();
+            Artisan::call('larajobs:refresh-feed');
         }
     }
 }

@@ -20,8 +20,8 @@ class FeedService
 
     public function refresh()
     {
-        rescue(function () {
-            retry(3, function () {
+        return rescue(function () {
+            return retry(3, function () {
                 $channel = $this->createNewFeedWithReader();
                 $items = collect($channel)->map(fn (Rss $item) => [
                     'title' => $item->getTitle(),
@@ -31,6 +31,7 @@ class FeedService
                     'guid' => $item->getId(),
                 ]);
                 Jobs::upsert($items->toArray(), ['guid'], ['title', 'url', 'published_at', 'creator', 'guid']);
+                return $items;
             });
         });
     }

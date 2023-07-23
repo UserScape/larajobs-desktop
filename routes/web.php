@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/native/menu-bar-home', fn () => view('menu-bar-home', ['jobs' => Jobs::latest()->take(10)->get()]))->name('menu-bar-home');
+Route::get('/native/menu-bar-home',
+    fn () => view('menu-bar-home', ['jobs' => Jobs::orderByDesc('published_at')->take(10)->get()]))->name('menu-bar-home');
