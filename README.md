@@ -1,4 +1,4 @@
-<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/larajobs.svg" width="400" alt="LaraJobs Logo"></a></p>
+<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/a17caf883948d88194a0314ca52f94581c3c16b0/public/images/larajobs.svg" width="400" alt="LaraJobs Logo"></a></p>
 
 # LaraJobs Desktop
 
