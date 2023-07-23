@@ -1,66 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/larajobs.svg" width="400" alt="LaraJobs Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# LaraJobs Desktop
 
-## About Laravel
+An open source NativePHP menu bar application for MacOS, providing instant notifications when new jobs are posted on LaraJobs.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Description
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+LaraJobs Desktop is a convenient way to stay updated with the latest job postings from LaraJobs. The application sits in your menu bar, providing non-intrusive notifications and a quick overview of new job opportunities, ensuring you never miss out on your dream job.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Features:
+- Get notified about new job postings
+- *More features coming soon*
 
-## Learning Laravel
+![Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/screenshot.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Prerequisites
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+The LaraJobs Desktop application currently only supports MacOS.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation
 
-## Laravel Sponsors
+1. Download the [LaraJobs Desktop application](link)
+2. Run the application.
+3. Follow the on-screen instructions to configure the application settings to fit your preferences.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![Settings Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/settings-screenshot.png)
 
-### Premium Partners
+## Usage
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Use LaraJobs Desktop to stay informed about new jobs. Check out these screenshots for various use cases:
+
+- [Notification Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/notification-screenshot.png)
+
+*More use cases and screenshots coming soon*
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Contributions are welcome! Please ensure your pull requests adhere to the following Laravel coding guidelines: [https://spatie.be/guidelines/laravel-php](https://spatie.be/guidelines/laravel-php)
 
-## Code of Conduct
+## Roadmap
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+We have big plans for LaraJobs Desktop! Here are some features we're considering for future releases:
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Watch jobs functionality to keep track of jobs.
+- Click on a notification to see quick job details, with an option to go to the site.
+- Save job application details for easy reviewing later and to reduce effort required when applying to new jobs.
+- Track application status and write notes.
+- Backup / restore of settings.
+- Make key information front and center (BLUF) to avoid even clicking on unimportant jobs.
+- Show timezone difference to current location.
+- Display salary information.
+- Send batched notifications instead of one at a time.
+- Show "X new jobs since you last checked".
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT license - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Laravel](https://laravel.com/)
+- [NativePHP](https://nativephp.com/)

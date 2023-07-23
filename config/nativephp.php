@@ -13,7 +13,7 @@ return [
      * usually in the form of a reverse domain name.
      * For example: com.nativephp.app
      */
-    'app_id' => env('NATIVEPHP_APP_ID'),
+    'app_id' => env('NATIVEPHP_APP_ID', 'com.larajobs.desktop'),
 
     /**
      * If your application allows deep linking, you can specify the scheme
@@ -24,12 +24,12 @@ return [
      * This would allow you to open your application using a URL like:
      * nativephp://some/path
      */
-    'deeplink_scheme' => env('NATIVEPHP_DEEPLINK_SCHEME'),
+    'deeplink_scheme' => env('NATIVEPHP_DEEPLINK_SCHEME', 'larajobs'),
 
     /**
      * The author of your application.
      */
-    'author' => env('NATIVEPHP_APP_AUTHOR'),
+    'author' => env('NATIVEPHP_APP_AUTHOR', 'LaraJobs'),
 
     /**
      * The default service provider for your application. This provider
@@ -47,7 +47,7 @@ return [
          * updater will only work when your application is bundled
          * for production.
          */
-        'enabled' => env('NATIVEPHP_UPDATER_ENABLED', true),
+        'enabled' => env('NATIVEPHP_UPDATER_ENABLED', false),
 
         /**
          * The updater provider to use.
