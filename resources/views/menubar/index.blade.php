@@ -32,7 +32,7 @@
                             $color = '#2d3748';
                         @endphp
                         {{-- <a data-url="https://www.bythepixel.com/laravel-vuejs-developer.html" href="/job/3090" class="job-link group block mb-6 px-6 md:px-0"> --}}
-                        <a onclick="shell.openExternal('{{ $url }}')" href="javascript:;" class="group block px-0 border-b border-gray-200 hover:border-gray-400 hover:bg-[#eee] transition">
+                        <a onclick="shell.openExternal('{{ $url }}')" href="javascript:;" class="group block px-0 border-b border-gray-200 hover:bg-[#eee] transition-all">
                             <div
                                 class="relative rounded p-4 shadow-sm flex items-center space-x-3 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                             >
@@ -48,7 +48,7 @@
                                     <div class="flex-1 min-w-0 mb-0 w-full" style="color:{{ $color }};">
                                         <span class="absolute inset-0" aria-hidden="true"></span>
                                         <p class="text-xs text-gray-500 truncate" style="color:{{ $color }};">{{ $creator }}</p>
-                                        <p class="text-lg font-bold text-gray-900" style="color:{{ $color }};">{{ $title}}</p>
+                                        <p class="text-md font-bold text-gray-900" style="color:{{ $color }};">{{ $title}}</p>
                                         <p class="text-xs text-gray-500" style="color:{{ $color }};">
                                             @if ($type === 'FULL_TIME')
                                                 Full Time
@@ -90,32 +90,32 @@
                         </a>
                     @endforeach
                 </main>
-                <div class="max-w-7xl mx-auto pt-4 overflow-hidden px-6 lg:px-8 pb-4">
+                <div class="max-w-7xl mx-auto pt-4 overflow-hidden px-6 lg:px-8 pb-4 text-xs">
                     <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                         <div class="px-5 py-2">
-                            <a onclick="shell.openExternal('https://larajobs.com')" href="javascript:;" class="text-base text-gray-500 hover:text-gray-900"> Jobs </a>
+                            <a onclick="shell.openExternal('https://larajobs.com')" href="javascript:;" class="text-gray-500 hover:text-gray-900"> Jobs </a>
                         </div>
 
                         <div class="px-5 py-2">
-                            <a onclick="shell.openExternal('https://larajobs.com/laravel-consultants')" href="javascript:;" class="text-base text-gray-500 hover:text-gray-900">Consultants</a>
+                            <a onclick="shell.openExternal('https://larajobs.com/laravel-consultants')" href="javascript:;" class="text-gray-500 hover:text-gray-900">Consultants</a>
                         </div>
 
                         <div class="px-5 py-2">
-                            <a onclick="shell.openExternal('mailto:larajobs@userscape.com')" href="javascript:;" class="text-base text-gray-500 hover:text-gray-900"> Contact </a>
+                            <a onclick="shell.openExternal('mailto:larajobs@userscape.com')" href="javascript:;" class="text-gray-500 hover:text-gray-900"> Contact </a>
                         </div>
 
                         <div class="px-5 py-2">
-                            <a onclick="shell.openExternal('https://larajobs.com/feed')" href="javascript:;" class="text-base text-gray-500 hover:text-gray-900"> RSS </a>
+                            <a onclick="shell.openExternal('https://larajobs.com/feed')" href="javascript:;" class="text-gray-500 hover:text-gray-900"> RSS </a>
                         </div>
 
                         <div class="px-5 py-2">
-                            <a onclick="shell.openExternal('https://twitter.com/laraveljobs')" href="javascript:;" class="text-base text-gray-500 hover:text-gray-900"> Twitter </a>
+                            <a onclick="shell.openExternal('https://twitter.com/laraveljobs')" href="javascript:;" class="text-gray-500 hover:text-gray-900"> Twitter </a>
                         </div>
                     </nav>
-                    <p class="mt-4 text-center text-base text-gray-400">
+                    <p class="mt-4 text-center text-gray-400">
                         Built by <a onclick="shell.openExternal('https://userscape.com')" href="javascript:;">UserScape</a> in partnership with <a onclick="shell.openExternal('https://laravel-news.com')" href="javascript:;">Laravel News</a>
                     </p>
-                    <p class="mt-1 text-center text-base text-gray-400">&copy; 2014 - {{ date('Y') }}</p>
+                    <p class="mt-1 text-center text-gray-400">&copy; 2014 - {{ date('Y') }}</p>
                 </div>
             </div>
         </div>
