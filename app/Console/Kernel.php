@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('larajobs:refresh-feed')->hourly();
+        $schedule->command('larajobs:refresh-feed')->everyMinute();
     }
 
     /**

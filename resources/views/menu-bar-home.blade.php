@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Carbon;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +27,7 @@
                 </a>
             </nav>
         </header>
-        <div class="px-4 pt-16 overflow-y-scroll">
+        <div class="px-4 pt-16 overflow-y-scroll w-full">
             <main class="space-y-2">
                 @foreach ($jobs as $job)
                     @php
@@ -31,8 +35,9 @@
                     @endphp
                     <a onclick="shell.openExternal('{{ $url }}')" href="#" class="block">
                         <section class="border border-gray-200 hover:border-zinc-400 px-4 py-2 rounded shadow-sm">
-                            <h2 class="text-sm">{{ $creator }}</h2>
-                            <h1 class="text-lg font-semibold">{{ $title }}</h1>
+                            <h2 class="text-sm truncate">{{ $creator }}</h2>
+                            <h1 class="text-lg font-semibold truncate">{{ $title }}</h1>
+                            <p class="text-zinc-400 text-xs">{{ Carbon::parse($published_at)->diffForHumans() }}</p>
                         </section>
                     </a>
                 @endforeach
