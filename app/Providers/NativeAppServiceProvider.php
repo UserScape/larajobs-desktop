@@ -16,11 +16,13 @@ class NativeAppServiceProvider
      */
     public function boot(): void
     {
+        $deepLinkPrefix = config('nativephp.deeplink_scheme') . '://';
         MenuBar::create()
             ->icon(public_path('images/menuBarIconTemplate@2x.png'))
             ->route('menubar.index')->withContextMenu(
                 Menu::new()
-                    ->link(config('nativephp.deeplink_scheme').'://refresh', 'Refresh', 'CmdOrCtrl+R')
+                    ->link("{$deepLinkPrefix}refresh", 'Refresh', 'CmdOrCtrl+R')
+                    ->link("{$deepLinkPrefix}notify", 'Test Notifications', 'CmdOrCtrl+N')
                     ->separator()
                     ->link('https://larajobs.com', 'View LaraJobs.com')
                     ->link('https://larajobs.com/create', 'Post a Job')
