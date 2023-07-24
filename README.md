@@ -20,23 +20,24 @@ Features:
 
 ## Prerequisites
 
-The LaraJobs Desktop application currently only supports MacOS.
+The LaraJobs Desktop application currently only supports MacOS. You will also need PHP, Composer, Node, & Yarn installed on your system. Recommended to use [Laravel Herd](https://herd.laravel.com/) and then install yarn via Homebrew (`brew install yarn`).
 
 ## Installation
 
-1. Download the [LaraJobs Desktop application](link) (link coming soon).
-2. Run the application.
-3. Follow the on-screen instructions to configure the application settings to fit your preferences.
+1. Download the project (`git clone git@github.com:LukeTowers/larajobs-desktop.git larajobs-desktop`
+2. Run `cd larajobs-desktop && composer install && npm install && npm run build`
+3. Run `php artisan native:serve`
 
-![Settings Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/settings-screenshot.png)
+Future Plans:
+- Fix publishing / building - currently the builds produced by `native:build` or `native:publish` don't actually register the `MenuBar` for some reason.
+- Automate building releases on publishing new tags through Github actions
+- Add support for preferences (i.e. filtering, refresh frequency, etc)
 
 ## Usage
 
-Use LaraJobs Desktop to stay informed about new jobs. Check out these screenshots for various use cases:
+Use LaraJobs Desktop to stay informed about new jobs.
 
-- [Notification Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/notification-screenshot.png)
-
-*More use cases and screenshots coming soon*
+>**NOTE:** Storing job data locally and generating notifications when new job posts are detected is currently WIP.
 
 ## Potential Issues
 
