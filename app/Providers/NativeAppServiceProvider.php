@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Config;
 use Native\Laravel\Enums\RolesEnum;
 use Native\Laravel\Menu\Menu;
 use Native\Laravel\Facades\MenuBar;
@@ -17,7 +18,7 @@ class NativeAppServiceProvider
     {
         MenuBar::create()
             ->icon(public_path('images/menuBarIconTemplate@2x.png'))
-            ->url('/')->showDockIcon()->withContextMenu(
+            ->route('menubar.index')->withContextMenu(
                 Menu::new()
                     ->link(config('nativephp.deeplink_scheme').'://refresh', 'Refresh', 'CmdOrCtrl+R')
                     ->separator()
@@ -25,7 +26,8 @@ class NativeAppServiceProvider
                     ->link('https://larajobs.com/create', 'Post a Job')
                     ->link('https://larajobs.com/laravel-consultants', 'Hire a Laravel Consultant')
                     ->separator()
-                    ->add(new Role(RolesEnum::QUIT, 'Quit LaraJobs'))
-            );
+                    ->add(new Role(RolesEnum::QUIT, 'Quit ' . Config::get('app.name', 'LaraJobs Desktop'))
+            )
+        );
     }
 }
