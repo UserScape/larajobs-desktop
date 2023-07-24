@@ -1,4 +1,4 @@
-<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/a17caf883948d88194a0314ca52f94581c3c16b0/public/images/larajobs.svg?token=ABXK6UFSVJEBDKWUUUNACXDEXV6DS" width="400" alt="LaraJobs Logo"></a></p>
+<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/24e5d3c2-74e9-4305-9503-43518aa7223c" width="400" alt="LaraJobs Logo"></a></p>
 
 # LaraJobs Desktop
 
@@ -10,9 +10,13 @@ LaraJobs Desktop is a convenient way to stay updated with the latest job posting
 
 Features:
 - Get notified about new job postings
+- View list of most recent job postings
+- Quick links to submit postings or search for Laravel Consultants
 - *More features coming soon*
 
-![Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/screenshot.png)
+<img width="411" alt="Screenshot 2023-07-23 at 11 41 18 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/46fd2c27-240f-424f-9c8b-afcb9f12685a">
+
+<img width="242" alt="Screenshot 2023-07-23 at 11 40 25 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/0421b540-6997-417c-b3b6-61fcd5a2ffcb">
 
 ## Prerequisites
 
@@ -33,6 +37,18 @@ Use LaraJobs Desktop to stay informed about new jobs. Check out these screenshot
 - [Notification Screenshot](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/notification-screenshot.png)
 
 *More use cases and screenshots coming soon*
+
+## Potential Issues
+
+### Notifications aren't displaying:
+
+Please make sure that notifications are enabled for the app. When running `php artisan native:serve` notifications are sent from the "Electron" app.
+
+Broken:
+![Screenshot 2023-07-23 at 11 33 09 PM](https://github.com/LukeTowers/larajobs-desktop/assets/7253840/05433b27-d9e9-408f-b882-55b690b93738)
+
+Working:
+![Screenshot 2023-07-23 at 11 35 08 PM](https://github.com/LukeTowers/larajobs-desktop/assets/7253840/487f170c-c4ba-498b-81c5-452ee2e9f0b7)
 
 ## Contributing
 
