@@ -2,6 +2,9 @@
 
 namespace App\Listeners;
 
+use Joli\JoliNotif\Notification as JoliNotification;
+use Joli\JoliNotif\NotifierFactory;
+
 use Native\Laravel\Client\Client;
 use Native\Laravel\Events\App\OpenedFromURL;
 use Native\Laravel\Notification;
@@ -31,7 +34,7 @@ class HandleDeepLink
         ]);
     }
 
-    public function handleNotify(OpenedFromURL $event): void
+    public function handleNotifyNative(OpenedFromURL $event): void
     {
         $title = "Test Notification";
         $message = "This is a test notification.";
@@ -41,8 +44,23 @@ class HandleDeepLink
 
         $notification->title($title . uniqid())
             ->message($message)
+            ->event('test')
             ->show();
 
         ray($notification);
+    }
+
+    public function handleNotifyJoli(OpenedFromURL $event): void
+    {
+        $title = "Test Notification";
+        $message = "This is a test notification.";
+
+        $notifier = NotifierFactory::create();
+        $notification = (new JoliNotification())
+            ->setTitle($title . uniqid())
+            ->setBody($message)
+            ->setIcon(public_path('/images/menuBarIconTemplate@2x.png'));
+
+        $notifier->send($notification);
     }
 }

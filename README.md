@@ -24,7 +24,7 @@ The LaraJobs Desktop application currently only supports MacOS.
 
 ## Installation
 
-1. Download the [LaraJobs Desktop application](link)
+1. Download the [LaraJobs Desktop application](link) (link coming soon).
 2. Run the application.
 3. Follow the on-screen instructions to configure the application settings to fit your preferences.
 
@@ -63,9 +63,7 @@ We have big plans for LaraJobs Desktop! Here are some features we're considering
 - Save job application details for easy reviewing later and to reduce effort required when applying to new jobs.
 - Track application status and write notes.
 - Backup / restore of settings.
-- Make key information front and center (BLUF) to avoid even clicking on unimportant jobs.
 - Show timezone difference to current location.
-- Display salary information.
 - Send batched notifications instead of one at a time.
 - Show "X new jobs since you last checked".
 

@@ -22,7 +22,8 @@ class NativeAppServiceProvider
             ->route('menubar.index')->withContextMenu(
                 Menu::new()
                     ->link("{$deepLinkPrefix}refresh", 'Refresh', 'CmdOrCtrl+R')
-                    ->link("{$deepLinkPrefix}notify", 'Test Notifications', 'CmdOrCtrl+N')
+                    ->link("{$deepLinkPrefix}notifyNative", 'Test Native Notifications', 'CmdOrCtrl+N')
+                    ->link("{$deepLinkPrefix}notifyJoli", 'Test Joli Notifications', 'CmdOrCtrl+J')
                     ->separator()
                     ->link('https://larajobs.com', 'View LaraJobs.com')
                     ->link('https://larajobs.com/create', 'Post a Job')
