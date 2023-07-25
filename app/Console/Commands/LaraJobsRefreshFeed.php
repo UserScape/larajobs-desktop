@@ -35,6 +35,11 @@ class LaraJobsRefreshFeed extends Command
          * @var \Illuminate\Support\Collection $items
          */
         $items = $feedService->refresh();
+
+        if ($items === null) {
+            return;
+        }
+
         $items = $items->filter(fn ($item) => ! $latestJobs->contains('guid', $item['guid']));
 
         $latestJob = $items->first();
@@ -47,7 +52,7 @@ class LaraJobsRefreshFeed extends Command
         if ($numberOfItems > 0) {
             if ($numberOfItems < 2) {
                 $title = $latestJob['title'];
-                $message = $latestJob['creator'];
+                $message = $latestJob['company'];
             } else {
                 $title = __('New jobs available');
                 $message = __('We have :count new jobs', ['count' => $numberOfItems]);

@@ -56,7 +56,11 @@ class NativeAppServiceProvider
         $refreshLink = config('nativephp.deeplink_scheme').'://refresh';
 
         MenuBar::create()
-            ->route('menu-bar-home')->showDockIcon()->withContextMenu(
+            ->route('menu-bar-home')
+            ->width(config('larajobs.ui.menu-bar.view.width'))
+            ->height(config('larajobs.ui.menu-bar.view.height'))
+            ->showDockIcon()
+            ->withContextMenu(
                 Menu::new()
                     ->link($refreshLink, 'Refresh', 'CmdOrCtrl+R')
                     ->separator()

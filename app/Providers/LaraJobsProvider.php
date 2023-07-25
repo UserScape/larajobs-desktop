@@ -22,6 +22,5 @@ class LaraJobsProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
     }
 }
