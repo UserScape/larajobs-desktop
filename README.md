@@ -8,15 +8,13 @@ An open source NativePHP menu bar application for MacOS, providing instant notif
 
 LaraJobs Desktop is a convenient way to stay updated with the latest job postings from LaraJobs. The application sits in your menu bar, providing non-intrusive notifications and a quick overview of new job opportunities, ensuring you never miss out on your dream job.
 
-Features:
+### Features:
 - Get notified about new job postings
 - View list of most recent job postings
 - Quick links to submit postings or search for Laravel Consultants
 - Global hotkey to open the app (default: `CmdOrCtrl+Shift+J`)
 - Send batched notifications, just one, or an explicit "No new jobs" depending on the number of new jobs identified.
-- *More features coming soon*
 
-  
 <img width="352" alt="Screenshot 2023-07-24 at 10 49 13 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/0201e452-cb6f-4682-9890-6fa2aaf33b63">
 <img width="364" alt="Screenshot 2023-07-24 at 10 50 37 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/ef85c41b-a17b-4cc5-a3d0-d2461d985d13">
 <img width="356" alt="Screenshot 2023-07-25 at 12 16 25 AM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/095493b6-f904-4597-a238-d57cbeb39d40">
@@ -25,6 +23,18 @@ Features:
 
 <img width="411" alt="Screenshot 2023-07-23 at 11 41 18 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/46fd2c27-240f-424f-9c8b-afcb9f12685a">
 <img width="243" alt="Screenshot 2023-07-25 at 12 18 06 AM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/4b4cdf50-914f-442c-9294-dd9273ae864e">
+
+## Roadmap
+
+We have big plans for LaraJobs Desktop! Here are some features we're considering for future releases:
+
+- (WIP) - Ability to filter jobs by keyword, location, etc (see https://github.com/LukeTowers/larajobs-desktop/tree/wip/filtering-support)
+- Watch jobs functionality to keep track of jobs.
+- Click on a notification to see quick job details, with an option to go to the site.
+- Save job application details for easy reviewing later and to reduce effort required when applying to new jobs.
+- Track application status and write notes.
+- Backup / restore of settings.
+- Show timezone difference to current location.
 
 ## Prerequisites
 
@@ -61,17 +71,6 @@ Working:
 ## Contributing
 
 Contributions are welcome! Please ensure your pull requests adhere to the following Laravel coding guidelines: [https://spatie.be/guidelines/laravel-php](https://spatie.be/guidelines/laravel-php)
-
-## Roadmap
-
-We have big plans for LaraJobs Desktop! Here are some features we're considering for future releases:
-
-- Watch jobs functionality to keep track of jobs.
-- Click on a notification to see quick job details, with an option to go to the site.
-- Save job application details for easy reviewing later and to reduce effort required when applying to new jobs.
-- Track application status and write notes.
-- Backup / restore of settings.
-- Show timezone difference to current location.
 
 ## License
 
