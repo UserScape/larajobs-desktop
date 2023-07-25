@@ -2,8 +2,12 @@
 
 namespace App\Console;
 
+use App\Models\Job;
+use App\RSS\Larajobs;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Native\Laravel\Facades\Notification;
+use Native\Laravel\Facades\MenuBar;
 
 class Kernel extends ConsoleKernel
 {
@@ -12,7 +16,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $larajobsRSSFeed = new Larajobs();
+            $job = $larajobsRSSFeed->getJob();
+            Job::create($job);
+        })->everyFiveMinutes();
     }
 
     /**

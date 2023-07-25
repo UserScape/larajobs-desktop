@@ -2,23 +2,12 @@
 
 namespace App\RSS;
 
+use App\Models\Job;
 use Illuminate\Support\Carbon;
 
 class Larajobs
 {
     protected $url;
-
-    private $syNamespaceUrl = 'http://purl.org/rss/1.0/modules/syndication/';
-
-    private $dcNamespaceUrl = 'http://purl.org/dc/elements/1.1/';
-
-    private $larajobNamespaceUrl = 'https://larajobs.com';
-
-    private $syNamespace;
-
-    private $dcNamespace;
-
-    private $larajobNamespace;
 
     /**
      * Setup the URL
@@ -26,19 +15,6 @@ class Larajobs
     public function __construct()
     {
         $this->url = env('LARAJOB_RSS_FEED_URL', '');
-    }
-
-    /**
-     * Set Namespaces for the Feed
-     * @param SimpleXMLElement The Feed data
-     *
-     * @return void
-     */
-    private function setNamespaces($rssFeedData): void
-    {
-        $this->syNamespace = $rssFeedData->children($this->syNamespaceUrl);
-        $this->dcNamespace = $rssFeedData->children($this->dcNamespaceUrl);
-        $this->larajobNamespace = $rssFeedData->children($this->larajobNamespaceUrl);
     }
 
     /**
@@ -82,11 +58,6 @@ class Larajobs
      */
     public function getJobs($numberOfJobs = 1): array
     {
-        $jobs = [];
-        for ($i = 0; $i < $numberOfJobs; $i++) {
-            $jobs[] = $this->getJob();
-        }
-
-        return $jobs;
+        return Job::limit($numberOfJobs)->inRandomOrder()->get()->toArray();
     }
 }
