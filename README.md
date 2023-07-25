@@ -16,9 +16,15 @@ Features:
 - Send batched notifications, just one, or an explicit "No new jobs" depending on the number of new jobs identified.
 - *More features coming soon*
 
-<img width="411" alt="Screenshot 2023-07-23 at 11 41 18 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/46fd2c27-240f-424f-9c8b-afcb9f12685a">
+  
+<img width="352" alt="Screenshot 2023-07-24 at 10 49 13 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/0201e452-cb6f-4682-9890-6fa2aaf33b63">
+<img width="364" alt="Screenshot 2023-07-24 at 10 50 37 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/ef85c41b-a17b-4cc5-a3d0-d2461d985d13">
+<img width="356" alt="Screenshot 2023-07-25 at 12 16 25 AM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/095493b6-f904-4597-a238-d57cbeb39d40">
 
-<img width="242" alt="Screenshot 2023-07-23 at 11 40 25 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/0421b540-6997-417c-b3b6-61fcd5a2ffcb">
+<br>
+
+<img width="411" alt="Screenshot 2023-07-23 at 11 41 18 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/46fd2c27-240f-424f-9c8b-afcb9f12685a">
+<img width="243" alt="Screenshot 2023-07-25 at 12 18 06 AM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/4b4cdf50-914f-442c-9294-dd9273ae864e">
 
 ## Prerequisites
 
