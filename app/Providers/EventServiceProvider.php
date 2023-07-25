@@ -2,11 +2,14 @@
 
 namespace App\Providers;
 
+use Event;
 use App\Listeners\HandleDeepLink;
+use App\Listeners\HandleNotificationClicked;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Native\Laravel\Events\App\OpenedFromURL;
+use Native\Laravel\Events\Notifications\NotificationClicked;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,6 +25,9 @@ class EventServiceProvider extends ServiceProvider
         OpenedFromURL::class => [
             HandleDeepLink::class,
         ],
+        NotificationClicked::class => [
+            HandleNotificationClicked::class,
+        ],
     ];
 
     /**
@@ -29,7 +35,11 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Handle specific notifications being clicked.
+        // Waiting for string events and custom events to be supported
+        Event::listen('notification.clicked.*', function () {
+            // ray(func_get_args());
+        });
     }
 
     /**
