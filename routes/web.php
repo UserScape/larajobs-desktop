@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\FeedsController;
+use App\Http\Controllers\WatchingController;
+use App\Utility\RssFeedLoader;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FeedsController::class, 'index']);
+Route::get('watching', [WatchingController::class, 'index']);
+Route::post('watching', [WatchingController::class, 'update']);
