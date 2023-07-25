@@ -11,7 +11,7 @@ class FeedsController extends Controller
 {
     public function index()
     {
-        $jobs = (new LaraJobsReader)->getItems();
+        $jobs = (new LaraJobsReader)->getMatchingItems();
 
         return Inertia::render('index', [
             'jobs' => $jobs,

@@ -44,9 +44,9 @@ const save = () => {
     <div class="flex flex-col gap-2 h-full">
         <div class="flex flex-col gap-2">
             <label class="text-lg flex flex-col gap-1">
-                <strong>Select Tags to Watch</strong>
+                <strong>Select Tags to Filter By</strong>
                 <span class="text-sm text-gray-500">
-                    Tags you want to watch for (Leave blank for all)
+                    Tags you want to filter by (Leave blank for all)
                 </span>
             </label>
             <Multiselect :value="null" :options="availableTags" v-model="watching.tags" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
@@ -55,7 +55,7 @@ const save = () => {
             <label class="text-lg flex flex-col gap-1">
                 <strong>Minimum Hourly Rate</strong>
                 <span class="text-sm text-gray-500">
-                    Minimum hourly rate you want to watch for (Leave blank for all). This will be converted to an yearly rate or monthly rate depending on the job posting.
+                    Minimum hourly rate you want to filter by (Leave blank for all). This will be converted to an yearly rate or monthly rate depending on the job posting.
                 </span>
             </label>
             <div class="grid grid-cols-12">
@@ -75,7 +75,7 @@ const save = () => {
                     <input v-model="watching.full_time" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
                 </div>
                 <span class="text-sm text-gray-500">
-                    Only watch for full time jobs.
+                    Filter by full time jobs.
                 </span>
             </label>
         </div>
