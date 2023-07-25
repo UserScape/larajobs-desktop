@@ -54,8 +54,8 @@ class Larajobs
         $job = $larajobsRSSFeed->channel->item;
         $title = $job->title;
         $link = $job->link;
-        $location = $job->children('job', true)->location;
-        $company = $job->children('job', true)->company;
+        $location = htmlspecialchars_decode($job->children('job', true)->location);
+        $company = htmlspecialchars_decode($job->children('job', true)->company);
         $jobType = $job->children('job', true)->jobType;
         $salary = $job->children('job', true)->salary ?? "No Salary Info provided";
 
