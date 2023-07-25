@@ -22,4 +22,7 @@ setTimeout(() => {
         <p>Search Params Updated!</p>
     </div>
     <Job v-for="(job, key) in jobs" v-bind="job" :key="key"/>
+    <p class="text-gray-400 text-sm text-center" v-if="jobs.length <= 0">
+        No matching jobs found.
+    </p>
 </template>
