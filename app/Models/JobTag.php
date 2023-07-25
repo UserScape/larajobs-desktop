@@ -9,6 +9,11 @@ class JobTag extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
+
     public function posts()
     {
         return $this->belongsToMany(JobPost::class, 'job_post_tags', 'job_tag_id', 'job_post_id');

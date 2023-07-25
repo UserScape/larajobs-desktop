@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Events\JobsPosted;
 use Event;
 use App\Listeners\HandleDeepLink;
 use App\Listeners\HandleNotificationClicked;
+use App\Listeners\SendNewJobsNotification;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -28,6 +30,9 @@ class EventServiceProvider extends ServiceProvider
         NotificationClicked::class => [
             HandleNotificationClicked::class,
         ],
+        JobsPosted::class => [
+            SendNewJobsNotification::class,
+        ]
     ];
 
     /**
@@ -37,9 +42,9 @@ class EventServiceProvider extends ServiceProvider
     {
         // Handle specific notifications being clicked.
         // Waiting for string events and custom events to be supported
-        Event::listen('notification.clicked.*', function () {
-            // ray(func_get_args());
-        });
+        // Event::listen('notification.clicked.*', function () {
+        //     // ray(func_get_args());
+        // });
     }
 
     /**

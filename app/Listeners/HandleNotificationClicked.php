@@ -2,12 +2,7 @@
 
 namespace App\Listeners;
 
-use Native\Laravel\Client\Client;
 use Native\Laravel\Events\Notifications\NotificationClicked;
-use Native\Laravel\Facades\Window;
-// use Native\Laravel\Notification;
-
-use Illuminate\Support\Str;
 use Native\Laravel\Facades\MenuBar;
 
 class HandleNotificationClicked
@@ -15,7 +10,7 @@ class HandleNotificationClicked
     /**
      * Handle the event.
      */
-    public function handle($event): void
+    public function handle(NotificationClicked $event): void
     {
         // @TODO: Waiting on PRs to NativePHP repos to be merged in order to
         // directly open the URL in the browser from the notification.

@@ -4,10 +4,11 @@ namespace App\Providers;
 
 use Config;
 use Native\Laravel\Enums\RolesEnum;
-use Native\Laravel\Menu\Menu;
+use Native\Laravel\Facades\GlobalShortcut;
 use Native\Laravel\Facades\MenuBar;
 use Native\Laravel\Facades\Window;
 use Native\Laravel\Menu\Items\Role;
+use Native\Laravel\Menu\Menu;
 
 class NativeAppServiceProvider
 {
@@ -23,18 +24,23 @@ class NativeAppServiceProvider
             ->route('menubar.index')->withContextMenu(
                 Menu::new()
                     ->link("{$deepLinkPrefix}refresh", 'Refresh', 'CmdOrCtrl+R')
-                    ->link("{$deepLinkPrefix}notifyNative", 'Test Native Notifications', 'CmdOrCtrl+N')
                     ->separator()
-                    ->link('https://larajobs.com', 'View LaraJobs.com')
-                    ->link('https://larajobs.com/create', 'Post a Job')
-                    ->link('https://larajobs.com/laravel-consultants', 'Hire a Laravel Consultant')
+                    ->link('https://larajobs.com', 'View LaraJobs.com', 'CmdOrCtrl+L')
+                    ->link('https://larajobs.com/create', 'Post a Job', 'CmdOrCtrl+P')
+                    ->link('https://larajobs.com/laravel-consultants', 'Hire a Laravel Consultant', 'CmdOrCtrl+H')
                     ->separator()
                     ->add(new Role(RolesEnum::QUIT, 'Quit ' . Config::get('app.name', 'LaraJobs Desktop'))
             )
         );
 
+        // @TODO: Figure out why this doesn't work
+        GlobalShortcut::key('CmdOrCtrl+Shift+J')
+            ->event(\App\Events\HandleGlobalShortcutRefresh::class)
+            ->register();
+
+        // For debugging
         if (Config::get('app.debug', false)) {
-            Window::open()->alwaysOnTop();
+            // Window::open()->alwaysOnTop();
         }
     }
 }

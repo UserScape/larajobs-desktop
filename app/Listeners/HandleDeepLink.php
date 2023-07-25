@@ -2,11 +2,9 @@
 
 namespace App\Listeners;
 
-use Native\Laravel\Client\Client;
-use Native\Laravel\Events\App\OpenedFromURL;
-use Native\Laravel\Notification;
-
+use App\Jobs\FetchNewJobs;
 use Illuminate\Support\Str;
+use Native\Laravel\Events\App\OpenedFromURL;
 
 class HandleDeepLink
 {
@@ -24,26 +22,10 @@ class HandleDeepLink
         if (method_exists($this, $method)) {
             $this->{$method}($event);
         }
-
-        ray([
-            'event' => $event,
-            'method' => $method,
-        ]);
     }
 
-    public function handleNotifyNative(OpenedFromURL $event): void
+    public function handleRefresh(): void
     {
-        $title = "Test Notification";
-        $message = "This is a test notification.";
-
-        $client = new Client();
-        $notification = new Notification($client);
-
-        $notification->title($title . uniqid())
-            ->message($message)
-            ->event('notification.clicked.' . uniqid())
-            ->show();
-
-        ray($notification);
+        FetchNewJobs::dispatchSync(true);
     }
 }

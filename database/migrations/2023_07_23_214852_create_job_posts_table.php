@@ -11,23 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Values can be HTML encoded
-
-
         Schema::create('job_posts', function (Blueprint $table) {
             $table->integer('id')->unsigned()->primary();
             $table->integer('job_creator_id');
             $table->string('title');
-            $table->string('url');
+            $table->string('link');
             $table->string('category')->default('Job');
             $table->string('type')->nullable();
             $table->string('salary')->nullable();
             $table->string('location')->nullable();
             $table->string('company')->nullable();
-            $table->string('logo_url')->nullable();
+            $table->string('company_logo')->nullable();
             $table->timestamps();
             $table->datetime('published_at');
-            $table->datetime('notified_at');
+            $table->datetime('notified_at')->nullable();
+            $table->datetime('hidden_at')->nullable();
             $table->softDeletes();
         });
     }
