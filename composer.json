@@ -23,7 +23,7 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "LaraJobs Desktop",
     "extra": {
         "laravel": {
             "dont-discover": []

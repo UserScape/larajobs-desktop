@@ -2,7 +2,7 @@
 
 I hope this can be a useful codebase for those looking to learn how to work [NativePHP](https://nativephp.com/).
 
-<img src="./larajobs-desktop-screenshot.png" >
+<img src="./larajobs-desktop-screenshot.png" height="512">
 <img src="./larajobs-notification.png" height="64">
 
 ## Features
