@@ -12,6 +12,8 @@ Features:
 - Get notified about new job postings
 - View list of most recent job postings
 - Quick links to submit postings or search for Laravel Consultants
+- Global hotkey to open the app (default: `CmdOrCtrl+Shift+J`)
+- Send batched notifications, just one, or an explicit "No new jobs" depending on the number of new jobs identified.
 - *More features coming soon*
 
 <img width="411" alt="Screenshot 2023-07-23 at 11 41 18 PM" src="https://github.com/LukeTowers/larajobs-desktop/assets/7253840/46fd2c27-240f-424f-9c8b-afcb9f12685a">
@@ -32,12 +34,11 @@ Future Plans:
 - Fix publishing / building - currently the builds produced by `native:build` or `native:publish` don't actually register the `MenuBar` for some reason.
 - Automate building releases on publishing new tags through Github actions
 - Add support for preferences (i.e. filtering, refresh frequency, etc)
+- Ability to explicitly hide jobs
 
 ## Usage
 
 Use LaraJobs Desktop to stay informed about new jobs.
-
->**NOTE:** Storing job data locally and generating notifications when new job posts are detected is currently WIP.
 
 ## Potential Issues
 
@@ -65,8 +66,6 @@ We have big plans for LaraJobs Desktop! Here are some features we're considering
 - Track application status and write notes.
 - Backup / restore of settings.
 - Show timezone difference to current location.
-- Send batched notifications instead of one at a time.
-- Show "X new jobs since you last checked".
 
 ## License
 
