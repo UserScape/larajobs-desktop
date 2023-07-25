@@ -21,7 +21,7 @@ class NativeAppServiceProvider
         $deepLinkPrefix = config('nativephp.deeplink_scheme') . '://';
         MenuBar::create()
             ->icon(public_path('images/menuBarIconTemplate@2x.png'))
-            ->route('menubar.index')->withContextMenu(
+            ->url('/')->withContextMenu(
                 Menu::new()
                     ->link("{$deepLinkPrefix}refresh", 'Refresh', 'CmdOrCtrl+R')
                     ->separator()
@@ -40,7 +40,7 @@ class NativeAppServiceProvider
 
         // For debugging
         if (Config::get('app.debug', false)) {
-            // Window::open()->alwaysOnTop();
+            Window::open()->alwaysOnTop();
         }
     }
 }

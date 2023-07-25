@@ -29,6 +29,8 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->routes(function () {
+            Route::get('/', \App\Http\Livewire\App::class);
+
             Route::middleware('api')
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toggle-checkbox:checked {
+    @apply right-0 border-primary;
+}
+.toggle-checkbox:checked + .toggle-label {
+    @apply bg-primary;
+}
