@@ -25,6 +25,9 @@ class WatchingDataUtility
             if (!isset($watching['full_time'])) {
                 $watching['full_time'] = null;
             }
+            if (!isset($watching['last_checked'])) {
+                $watching['last_checked'] = null;
+            }
         } catch (\Throwable) {
             $watching = [
                 'tags' => [],
@@ -32,7 +35,8 @@ class WatchingDataUtility
                     'min' => null,
                     'currency' => null,
                 ],
-                'full_time' => null
+                'full_time' => null,
+                'last_checked' => null,
             ];
             file_put_contents(database_path('watching.json'), json_encode($watching));
         }
