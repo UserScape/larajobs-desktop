@@ -6,6 +6,7 @@ use Config;
 use Native\Laravel\Enums\RolesEnum;
 use Native\Laravel\Menu\Menu;
 use Native\Laravel\Facades\MenuBar;
+use Native\Laravel\Facades\Window;
 use Native\Laravel\Menu\Items\Role;
 
 class NativeAppServiceProvider
@@ -23,7 +24,6 @@ class NativeAppServiceProvider
                 Menu::new()
                     ->link("{$deepLinkPrefix}refresh", 'Refresh', 'CmdOrCtrl+R')
                     ->link("{$deepLinkPrefix}notifyNative", 'Test Native Notifications', 'CmdOrCtrl+N')
-                    ->link("{$deepLinkPrefix}notifyJoli", 'Test Joli Notifications', 'CmdOrCtrl+J')
                     ->separator()
                     ->link('https://larajobs.com', 'View LaraJobs.com')
                     ->link('https://larajobs.com/create', 'Post a Job')
@@ -32,5 +32,9 @@ class NativeAppServiceProvider
                     ->add(new Role(RolesEnum::QUIT, 'Quit ' . Config::get('app.name', 'LaraJobs Desktop'))
             )
         );
+
+        if (Config::get('app.debug', false)) {
+            Window::open()->alwaysOnTop();
+        }
     }
 }
