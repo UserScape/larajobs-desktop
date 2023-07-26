@@ -2,8 +2,6 @@
 
 use App\Models\JobPost;
 use Illuminate\Support\Facades\Route;
-use Native\Laravel\Client\Client;
-use Native\Laravel\Notification;
 
 /*
 |--------------------------------------------------------------------------
