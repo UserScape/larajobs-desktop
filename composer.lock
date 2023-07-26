@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "404f6a7c074ca1e480924ce8c1e982a2",
+    "content-hash": "777c03f1d66ec14077a2cf587935f6fc",
     "packages": [
         {
             "name": "brick/math",
@@ -976,16 +976,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.15.0",
+            "version": "v10.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c7599dc92e04532824bafbd226c2936ce6a905b8"
+                "reference": "7589f09fe0e8735615cf25f0f1807682aac124c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c7599dc92e04532824bafbd226c2936ce6a905b8",
-                "reference": "c7599dc92e04532824bafbd226c2936ce6a905b8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7589f09fe0e8735615cf25f0f1807682aac124c1",
+                "reference": "7589f09fe0e8735615cf25f0f1807682aac124c1",
                 "shasum": ""
             },
             "require": {
@@ -1172,7 +1172,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-07-11T13:43:52+00:00"
+            "time": "2023-07-25T14:31:32+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1242,16 +1242,16 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "f23fe9d4e95255dacee1bf3525e0810d1a1b0f37"
+                "reference": "e5a3057a5591e1cfe8183034b0203921abe2c902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/f23fe9d4e95255dacee1bf3525e0810d1a1b0f37",
-                "reference": "f23fe9d4e95255dacee1bf3525e0810d1a1b0f37",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/e5a3057a5591e1cfe8183034b0203921abe2c902",
+                "reference": "e5a3057a5591e1cfe8183034b0203921abe2c902",
                 "shasum": ""
             },
             "require": {
@@ -1298,7 +1298,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2023-01-30T18:31:20+00:00"
+            "time": "2023-07-14T13:56:28+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1863,16 +1863,16 @@
         },
         {
             "name": "nativephp/electron",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/electron.git",
-                "reference": "0d482273889f0cf3fc336f83359da89c232b6fb7"
+                "reference": "41fb42882f387817432fd7a4d6f537eecabc7160"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/electron/zipball/0d482273889f0cf3fc336f83359da89c232b6fb7",
-                "reference": "0d482273889f0cf3fc336f83359da89c232b6fb7",
+                "url": "https://api.github.com/repos/NativePHP/electron/zipball/41fb42882f387817432fd7a4d6f537eecabc7160",
+                "reference": "41fb42882f387817432fd7a4d6f537eecabc7160",
                 "shasum": ""
             },
             "require": {
@@ -1931,22 +1931,22 @@
             ],
             "support": {
                 "issues": "https://github.com/NativePHP/electron/issues",
-                "source": "https://github.com/NativePHP/electron/tree/0.1.1"
+                "source": "https://github.com/NativePHP/electron/tree/0.1.2"
             },
-            "time": "2023-07-22T20:40:58+00:00"
+            "time": "2023-07-25T15:26:01+00:00"
         },
         {
             "name": "nativephp/laravel",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/laravel.git",
-                "reference": "bdde66b7313927354b17137a354c209b892e1291"
+                "reference": "42ce4e93eb7ed41522f3435acc673ddaf59aa1c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/laravel/zipball/bdde66b7313927354b17137a354c209b892e1291",
-                "reference": "bdde66b7313927354b17137a354c209b892e1291",
+                "url": "https://api.github.com/repos/NativePHP/laravel/zipball/42ce4e93eb7ed41522f3435acc673ddaf59aa1c7",
+                "reference": "42ce4e93eb7ed41522f3435acc673ddaf59aa1c7",
                 "shasum": ""
             },
             "require": {
@@ -2009,9 +2009,9 @@
             ],
             "support": {
                 "issues": "https://github.com/NativePHP/laravel/issues",
-                "source": "https://github.com/NativePHP/laravel/tree/0.1.0"
+                "source": "https://github.com/NativePHP/laravel/tree/0.1.1"
             },
-            "time": "2023-07-18T15:36:18+00:00"
+            "time": "2023-07-25T22:24:01+00:00"
         },
         {
             "name": "nativephp/php-bin",
