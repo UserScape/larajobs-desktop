@@ -22,9 +22,15 @@ class SendNewJobsNotification
 
         if ($newCount === 1) {
             $job = $jobs[0];
+
+            $message = $job->title;
+
+            if (!empty($job->salary)) {
+                $message .= ': ' . $job->salary;
+            }
             $notification
                 ->title("New job from {$job->creator->name}")
-                ->message($job->title)
+                ->message($message)
                 ->event('notification.clicked.newjob.' . $job->id)
                 ->show();
 
