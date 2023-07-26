@@ -45,7 +45,8 @@ The LaraJobs Desktop application currently only supports MacOS. You will also ne
 1. Download the project (`git clone git@github.com:LukeTowers/larajobs-desktop.git larajobs-desktop`
 2. Run `cd larajobs-desktop && composer install && npm install && npm run build`
 3. Run `cp .env.example .env`
-4. Run `php artisan native:serve`
+4. Run `php artisan key:generate`
+5. Run `php artisan native:serve`
 
 Future Plans:
 - Fix publishing / building - currently the builds produced by `native:build` or `native:publish` don't actually register the `MenuBar` for some reason.

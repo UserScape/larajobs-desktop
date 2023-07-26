@@ -2,6 +2,8 @@
 
 use App\Models\JobPost;
 use Illuminate\Support\Facades\Route;
+use Native\Laravel\Client\Client;
+use Native\Laravel\Notification;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/menubar/', function () {
-    $jobs = JobPost::where('deleted_at', null)->orderBy('published_at', 'desc')->limit(10)->get()->all();
+    $jobs = JobPost::whereNull('deleted_at')->orderBy('published_at', 'desc')->limit(10)->get()->all();
 
     return view('menubar.index', ['jobPosts' => $jobs]);
 })->name('menubar.index');
