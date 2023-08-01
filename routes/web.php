@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Settings;
 use App\Models\JobPost;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ Route::get('/menubar/', function () {
 
     return view('menubar.index', ['jobPosts' => $jobs]);
 })->name('menubar.index');
+
+Route::get('/settings', Settings::class)->name('menubar.settings');
