@@ -61,7 +61,7 @@ class JobPost extends Model
             // If so, filter the query.
             $builder->where(function ($query) use ($filters) {
                 foreach ($filters as $filter) {
-                    list($field, $operator, $value) = $filter->operationToQuery();
+                    [$field, $operator, $value] = $filter->operationToQuery();
 
                     $query->orWhere($field, $operator, $value);
                 }

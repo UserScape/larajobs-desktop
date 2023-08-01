@@ -59,21 +59,27 @@ class Filter extends Model
 
         switch ($this->operation) {
             case FilterOperation::Equals:
-                return '=';
+                $operation = '=';
+                break;
             case FilterOperation::NotEquals:
-                return '!=';
+                $operation = '!=';
+                break;
             case FilterOperation::Contains:
                 $value = "%{$value}%";
-                return 'LIKE';
+                $operation = 'LIKE';
+                break;
             case FilterOperation::NotContains:
                 $value = "%{$value}%";
-                return 'NOT LIKE';
+                $operation = 'NOT LIKE';
+                break;
+            default:
+                $operation = $this->operation;
         }
 
         return [
-            'field' => $this->field,
-            'operator' => $this->operation,
-            'value' => $value,
+            $this->field->value,
+            $operation,
+            $value,
         ];
     }
 }
