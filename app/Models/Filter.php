@@ -4,11 +4,14 @@ namespace App\Models;
 
 use App\Enums\FilterField;
 use App\Enums\FilterOperation;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Filter extends Model
 {
+    use HasFactory;
+
     protected $casts = [
         'field' => FilterField::class,
         'operation' => FilterOperation::class,
