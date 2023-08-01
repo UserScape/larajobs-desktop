@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\FilterField;
 use App\Enums\FilterOperation;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Filter extends Model
 {
@@ -18,6 +19,33 @@ class Filter extends Model
         'operation',
         'query',
     ];
+
+    /**
+     * Get the field name as a human readable string
+     */
+    public function getFriendlyField(): string
+    {
+        return Str::ucfirst($this->field->value);
+    }
+
+    /**
+     * Get the operation as a human readable string
+     */
+    public function getFriendlyOperation(): string
+    {
+        switch ($this->operation) {
+            case FilterOperation::Equals:
+                return 'equals';
+            case FilterOperation::NotEquals:
+                return 'isn\'t equal to';
+            case FilterOperation::Contains:
+                return 'contains';
+            case FilterOperation::NotContains:
+                return 'doesn\'t contain';
+            default:
+                return $this->operation;
+        }
+    }
 
     /**
      * Transforms the filter to a query arguments
