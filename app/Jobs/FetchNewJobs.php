@@ -62,7 +62,7 @@ class FetchNewJobs implements ShouldQueue
 
         // Fire the event
         // @TODO: Apply filters here
-        $jobs = JobPost::visible()->unnotified()->orderBy('published_at', 'desc')->get()->all();
+        $jobs = JobPost::visible()->unnotified()->orderBy('published_at', 'desc')->get();
         event(new JobsPosted($jobs, $this->notifyEmpty));
     }
 
