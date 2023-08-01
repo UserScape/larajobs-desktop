@@ -53,4 +53,22 @@ class JobPost extends Model
     {
         return $builder->whereNull('hidden_at');
     }
+
+    public function scopeFiltered(Builder $builder)
+    {
+        // Do we have any filters?
+        if ($filters = Filter::get()) {
+            // If so, filter the query.
+            $builder->where(function ($query) use ($filters) {
+                foreach ($filters as $filter) {
+                    list($field, $operator, $value) = $filter->operationToQuery();
+
+                    $query->orWhere($field, $operator, $value);
+                }
+            });
+        }
+
+        // Otherwise, just return the query.
+        return $builder;
+    }
 }
