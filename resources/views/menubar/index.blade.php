@@ -11,9 +11,9 @@
     </head>
 
     <body class="antialiased">
-        <div class="bg-white overflow-hidden relative">
+        <div class="bg-white">
             <header
-                class="flex items-end h-12 pb-2 px-8 flex-grow-0 bg-[#f4f4f5]"
+                class="sticky z-10 top-0 flex items-end h-12 pb-2 px-8 flex-grow-0 bg-[#f4f4f5]"
             >
                 <a onclick="shell.openExternal('https://larajobs.com')" href="#">
                     <img src="/images/larajobs.svg" alt="{{ config('app.name ')}}" class="h-6">
