@@ -68,16 +68,13 @@ class FetchNewJobs implements ShouldQueue
      * Notify the user of new jobs that have been posted.
      * If the user has defined filters for their notification preference,
      * we'll only notify them of jobs that match their criteria.
+     *
+     * The event constructor is responsible for fetching the
+     * jobs which meet the criteria.
      */
     protected function notifyJobsPosted()
     {
-        $jobs = JobPost::visible()
-            ->unnotified()
-            ->filtered()
-            ->orderBy('published_at', 'desc')
-            ->get();
-
-        event(new JobsPosted($jobs, $this->notifyEmpty));
+        event(new JobsPosted($this->notifyEmpty));
     }
 
     /**
