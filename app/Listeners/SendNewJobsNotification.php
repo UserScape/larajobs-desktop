@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Events\JobsPosted;
 use App\Models\JobPost;
 use Illuminate\Database\Eloquent\Collection;
-use Native\Laravel\Notification;
+use Native\Laravel\Facades\Notification;
 
 class SendNewJobsNotification
 {
