@@ -11,17 +11,10 @@ class JobsPosted
 {
     use Dispatchable, SerializesModels;
 
-    public Collection $jobs;
-
     /**
      * Create a new event instance.
      */
-    public function __construct(public bool $notifyEmpty = false)
+    public function __construct(public Collection $jobs, public bool $notifyEmpty = false)
     {
-        $this->jobs = JobPost::visible()
-            ->unnotified()
-            ->filtered()
-            ->orderBy('published_at', 'desc')
-            ->get();
     }
 }
