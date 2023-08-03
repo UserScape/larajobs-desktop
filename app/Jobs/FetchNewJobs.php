@@ -53,12 +53,8 @@ class FetchNewJobs implements ShouldQueue
         if ($newestPost && $newestPost->published_at->eq($lastBuildDate)) {
             // Nothing to do
         } else {
-            $posts = [];
             foreach ($feed->channel->item as $post) {
-                $jobPost = $this->storeJobPost($post);
-                if ($jobPost) {
-                    $posts[] = $jobPost;
-                }
+                $this->storeJobPost($post);
             }
         }
 
