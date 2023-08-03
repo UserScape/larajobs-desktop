@@ -9,26 +9,33 @@ An open source NativePHP menu bar application for MacOS, providing instant notif
 LaraJobs Desktop is a convenient way to stay updated with the latest job postings from LaraJobs. The application sits in your menu bar, providing non-intrusive notifications and a quick overview of new job opportunities, ensuring you never miss out on your dream job.
 
 ### Features:
+
+<img width="352" alt="Notification with single new job" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/notification-single.png">
+<img width="364" alt="Notification with multiple new jobs" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/notification-multi.png">
+<img width="356" alt="Notification with no new jobs" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/notification-none.png">
+
 - Get notified about new job postings
-- View list of most recent job postings
-- Quick links to submit postings or search for Laravel Consultants
-- Global hotkey to open the app (default: `CmdOrCtrl+Shift+J`)
 - Send batched notifications, just one, or an explicit "No new jobs" depending on the number of new jobs identified.
 
-<img width="352" alt="Notification with single new job" src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/notification-single.png">
-<img width="364" alt="Notification with multiple new jobs" src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/notification-multi.png">
-<img width="356" alt="Notification with no new jobs" src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/notification-none.png">
+<img width="411" alt="Jobs list" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/jobs-list.png">
 
-<br>
+- View list of most recent job postings
 
-<img width="411" alt="Jobs list" src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/jobs-list.png">
-<img width="243" alt="MenuBar context menu item" src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/menubar-context.png">
+<img width="243" alt="MenuBar context menu item" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/menubar-context.png">
+
+- Quick links to submit postings or search for Laravel Consultants
+- Global hotkey to open the app (default: `CmdOrCtrl+Shift+J`)
+
+- Ability to filter jobs
+
+<img width="411" alt="Filter Settings" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/filter-settings.png">
+<img width="411" alt="Filter New" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/filter-new.png">
+<img width="411" alt="Filter Populated" src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/filters-populated.png">
 
 ## Roadmap
 
 We have big plans for LaraJobs Desktop! Here are some features we're considering for future releases:
 
-- (WIP) - Ability to filter jobs by keyword, location, etc (see https://github.com/LukeTowers/larajobs-desktop/tree/wip/filtering-support)
 - Watch jobs functionality to keep track of jobs.
 - Click on a notification to see quick job details, with an option to go to the site.
 - Save job application details for easy reviewing later and to reduce effort required when applying to new jobs.
