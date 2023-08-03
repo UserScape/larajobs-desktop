@@ -6,6 +6,7 @@ use App\Models\JobPost;
 use App\Models\JobCreator;
 use App\Models\JobTag;
 use App\Events\JobsPosted;
+use App\Services\RSSDataService;
 use Carbon\Carbon;
 use Config;
 use Illuminate\Bus\Queueable;
@@ -30,13 +31,14 @@ class FetchNewJobs implements ShouldQueue
 
     /**
      * Execute the job.
+     *
+     * @param  RSSDataService $rssDataService
      */
-    public function handle(): void
+    public function handle(RSSDataService $rssDataService): void
     {
         // Fetch the feed
         try {
-            $xml = file_get_contents(Config::get('larajobs.feed_url'));
-            $feed = new SimpleXMLElement($xml);
+            $feed = $rssDataService->get();
         } catch (\Exception $e) {
             return;
         }
