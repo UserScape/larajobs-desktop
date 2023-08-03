@@ -53,7 +53,7 @@ class Filter extends Model
     /**
      * Transforms the filter to a query arguments
     */
-    public function operationToQuery()
+    public function operationToQuery(): array
     {
         $value = $this->query;
 
