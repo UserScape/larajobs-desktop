@@ -17,5 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-phpcs.phar
+
 /dist
