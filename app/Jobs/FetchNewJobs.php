@@ -18,14 +18,16 @@ use SimpleXMLElement;
 
 class FetchNewJobs implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * Create a new job instance.
      */
     public function __construct(public bool $notifyEmpty = false)
     {
-
     }
 
     /**
@@ -103,6 +105,10 @@ class FetchNewJobs implements ShouldQueue
             return JobTag::firstOrCreate(['name' => $tagName, 'slug' => $slug])->id;
         })->all();
 
+        $companyLogo = isset($jobData->company_logo) && pathinfo((string) $jobData->company_logo, PATHINFO_EXTENSION) ?
+            (string) $jobData->company_logo :
+            null;
+
         // Create the JobPost
         $jobPost = JobPost::create([
             'id' => $id,
@@ -114,7 +120,7 @@ class FetchNewJobs implements ShouldQueue
             'salary' => $this->getStringValue($jobData, 'salary'),
             'location' => $this->getStringValue($jobData, 'location'),
             'company' => $this->getStringValue($jobData, 'company'),
-            'company_logo' => isset($jobData->company_logo) && pathinfo((string) $jobData->company_logo, PATHINFO_EXTENSION) ? (string) $jobData->company_logo : null,
+            'company_logo' => $companyLogo,
             'published_at' => Carbon::parse((string) $post->pubDate),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
