@@ -32,7 +32,7 @@
                     <option value="{{ App\Enums\FilterOperation::Equals }}">equals</option>
                     <option value="{{ App\Enums\FilterOperation::NotEquals }}">is not</option>
                     <option value="{{ App\Enums\FilterOperation::Contains }}">contains</option>
-                    <option value="{{ App\Enums\FilterOperation::NotContains }}">doesnt contain</option>
+                    <option value="{{ App\Enums\FilterOperation::NotContains }}">doesn't contain</option>
                 </select>
 
                 @error('operation') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
