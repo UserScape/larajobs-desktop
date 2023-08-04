@@ -1,6 +1,9 @@
 name: Style enforcer
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
 
 jobs:
