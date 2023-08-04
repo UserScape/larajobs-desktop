@@ -13,7 +13,7 @@ class HandleDeepLink
      */
     public function handle(OpenedFromURL $event): void
     {
-        $prefix = config('nativephp.deeplink_scheme').'://';
+        $prefix = config('nativephp.deeplink_scheme') . '://';
         if (!Str::startsWith($event->url, $prefix)) {
             return;
         }

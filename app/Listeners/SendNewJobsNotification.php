@@ -40,7 +40,7 @@ class SendNewJobsNotification
         Notification::new()
             ->title("New job from {$job->creator->name}")
             ->message($message)
-            ->event(self::EVENT_CLICK_PREFIX . 'newjob.'. $job->id)
+            ->event(self::EVENT_CLICK_PREFIX . 'newjob.' . $job->id)
             ->show();
 
         $job->update([
