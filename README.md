@@ -1,4 +1,4 @@
-<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/larajobs.svg" width="400" alt="LaraJobs Logo"></a></p>
+<p align="center"><a href="https://larajobs.com" target="_blank"><img src="https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/larajobs.svg" width="400" alt="LaraJobs Logo"></a></p>
 
 # LaraJobs Desktop
 
@@ -36,10 +36,12 @@ LaraJobs Desktop is a convenient way to stay updated with the latest job posting
 
 We have big plans for LaraJobs Desktop! Here are some features we're considering for future releases:
 
+- Automate building releases on publishing new tags through Github actions
 - Watch jobs functionality to keep track of jobs.
 - Click on a notification to see quick job details, with an option to go to the site.
 - Save job application details for easy reviewing later and to reduce effort required when applying to new jobs.
 - Track application status and write notes.
+- Ability to explicitly hide jobs
 - Backup / restore of settings.
 - Show timezone difference to current location.
 
@@ -49,17 +51,11 @@ The LaraJobs Desktop application currently only supports MacOS. You will also ne
 
 ## Installation
 
-1. Download the project (`git clone git@github.com:LukeTowers/larajobs-desktop.git larajobs-desktop`
+1. Download the project (`git clone git@github.com:UserScape/larajobs-desktop.git larajobs-desktop`
 2. Run `cd larajobs-desktop && composer install && npm install && npm run build`
 3. Run `cp .env.example .env`
 4. Run `php artisan key:generate`
 5. Run `php artisan native:serve`
-
-Future Plans:
-- Fix publishing / building - currently the builds produced by `native:build` or `native:publish` don't actually register the `MenuBar` for some reason.
-- Automate building releases on publishing new tags through Github actions
-- Add support for preferences (i.e. filtering, refresh frequency, etc)
-- Ability to explicitly hide jobs
 
 ## Usage
 
@@ -72,10 +68,10 @@ Use LaraJobs Desktop to stay informed about new jobs.
 Please make sure that notifications are enabled for the app. When running `php artisan native:serve` notifications are sent from the "Electron" app.
 
 Broken:
-![Electron notifications 1](https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/electron-notifications-1.png)
+![Electron notifications 1](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/electron-notifications-1.png)
 
 Working:
-![Electron notifications 2](https://raw.githubusercontent.com/LukeTowers/larajobs-desktop/main/public/images/screenshots/electron-notifications-2.png)
+![Electron notifications 2](https://raw.githubusercontent.com/UserScape/larajobs-desktop/main/public/images/screenshots/electron-notifications-2.png)
 
 ## Contributing
 
