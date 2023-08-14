@@ -23,4 +23,4 @@ jobs:
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
 
       - name: Run build
-        run: php artisan native:publish
+        run: php artisan native:build
