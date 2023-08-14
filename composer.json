@@ -11,7 +11,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
-        "nativephp/electron": "^0.4.0",
+        "nativephp/electron": "dev-main",
         "nunomaduro/collision": "^7.7",
         "spatie/laravel-ignition": "^2.2",
         "spatie/laravel-ray": "^1.32"
@@ -55,6 +55,12 @@
             "dont-discover": []
         }
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/danjohnson95/electron"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
