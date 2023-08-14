@@ -29,9 +29,8 @@ class NativeAppServiceProvider
                     ->link('https://larajobs.com/create', 'Post a Job', 'CmdOrCtrl+P')
                     ->link('https://larajobs.com/laravel-consultants', 'Hire a Laravel Consultant', 'CmdOrCtrl+H')
                     ->separator()
-                    ->add(new Role(RolesEnum::QUIT, 'Quit ' . Config::get('app.name', 'LaraJobs Desktop'))
-            )
-        );
+                    ->add(new Role(RolesEnum::QUIT, 'Quit ' . Config::get('app.name', 'LaraJobs Desktop')))
+            );
 
         // @TODO: Figure out why this doesn't work
         GlobalShortcut::key('CmdOrCtrl+Shift+J')

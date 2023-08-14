@@ -6,6 +6,7 @@ use App\Models\JobPost;
 use App\Models\JobCreator;
 use App\Models\JobTag;
 use App\Events\JobsPosted;
+use App\Services\RSSDataService;
 use Carbon\Carbon;
 use Config;
 use Illuminate\Bus\Queueable;
@@ -18,25 +19,28 @@ use SimpleXMLElement;
 
 class FetchNewJobs implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * Create a new job instance.
      */
     public function __construct(public bool $notifyEmpty = false)
     {
-
     }
 
     /**
      * Execute the job.
+     *
+     * @param  RSSDataService $rssDataService
      */
-    public function handle(): void
+    public function handle(RSSDataService $rssDataService): void
     {
         // Fetch the feed
         try {
-            $xml = file_get_contents(Config::get('larajobs.feed_url'));
-            $feed = new SimpleXMLElement($xml);
+            $feed = $rssDataService->get();
         } catch (\Exception $e) {
             return;
         }
@@ -51,18 +55,28 @@ class FetchNewJobs implements ShouldQueue
         if ($newestPost && $newestPost->published_at->eq($lastBuildDate)) {
             // Nothing to do
         } else {
-            $posts = [];
             foreach ($feed->channel->item as $post) {
-                $jobPost = $this->storeJobPost($post);
-                if ($jobPost) {
-                    $posts[] = $jobPost;
-                }
+                $this->storeJobPost($post);
             }
         }
 
         // Fire the event
-        // @TODO: Apply filters here
-        $jobs = JobPost::visible()->unnotified()->orderBy('published_at', 'desc')->get()->all();
+        $this->notifyJobsPosted();
+    }
+
+    /**
+     * Notify the user of new jobs that have been posted.
+     * If the user has defined filters for their notification preference,
+     * we'll only notify them of jobs that match their criteria.
+     */
+    protected function notifyJobsPosted()
+    {
+        $jobs = JobPost::visible()
+            ->unnotified()
+            ->filtered()
+            ->orderBy('published_at', 'desc')
+            ->get();
+
         event(new JobsPosted($jobs, $this->notifyEmpty));
     }
 
@@ -103,6 +117,10 @@ class FetchNewJobs implements ShouldQueue
             return JobTag::firstOrCreate(['name' => $tagName, 'slug' => $slug])->id;
         })->all();
 
+        $companyLogo = isset($jobData->company_logo) && pathinfo((string) $jobData->company_logo, PATHINFO_EXTENSION) ?
+            (string) $jobData->company_logo :
+            null;
+
         // Create the JobPost
         $jobPost = JobPost::create([
             'id' => $id,
@@ -114,7 +132,7 @@ class FetchNewJobs implements ShouldQueue
             'salary' => $this->getStringValue($jobData, 'salary'),
             'location' => $this->getStringValue($jobData, 'location'),
             'company' => $this->getStringValue($jobData, 'company'),
-            'company_logo' => isset($jobData->company_logo) && pathinfo((string) $jobData->company_logo, PATHINFO_EXTENSION) ? (string) $jobData->company_logo : null,
+            'company_logo' => $companyLogo,
             'published_at' => Carbon::parse((string) $post->pubDate),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
