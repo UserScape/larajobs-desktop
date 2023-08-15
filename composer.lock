@@ -2059,7 +2059,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/danjohnson95/electron",
-                "reference": "799268cc08945bcbc2929fd9ec7ab38aba33da81"
+                "reference": "6bf7012566f63fb2ee93f915d75a94b729770007"
             },
             "require": {
                 "illuminate/contracts": "^10.0",
@@ -2138,7 +2138,7 @@
                 "laravel",
                 "nativephp"
             ],
-            "time": "2023-08-14T22:16:37+00:00"
+            "time": "2023-08-15T20:35:14+00:00"
         },
         {
             "name": "nativephp/laravel",
