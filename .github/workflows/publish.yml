@@ -34,7 +34,7 @@ jobs:
         run: php artisan native:install --force --ci
 
       - name: Run build
-        run: php artisan native:build --ci
+        run: php artisan native:publish --ci
         env:
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           CSC_LINK: ${{ secrets.CSC_LINK }}
