@@ -51,11 +51,22 @@ return [
 
         /**
          * The updater provider to use.
-         * Supported: "s3", "spaces"
+         * Supported: "github", "s3", "spaces"
          */
-        'default' => env('NATIVEPHP_UPDATER_PROVIDER', 'spaces'),
+        'default' => env('NATIVEPHP_UPDATER_PROVIDER', 'github'),
 
         'providers' => [
+            'github' => [
+                'driver' => 'github',
+                'repo' => env('GITHUB_REPO'),
+                'owner' => env('GITHUB_OWNER'),
+                'vPrefixedTagName' => true,
+                'token' => env('GITHUB_TOKEN'),
+                'private' => false,
+                'channel' => 'latest',
+                'releaseType' => 'draft',
+            ],
+
             's3' => [
                 'driver' => 's3',
                 'key' => env('AWS_ACCESS_KEY_ID'),
