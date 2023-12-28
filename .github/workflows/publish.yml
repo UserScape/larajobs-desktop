@@ -41,6 +41,9 @@ jobs:
           NATIVEPHP_APPLE_ID: ${{ secrets.NATIVEPHP_APPLE_ID }}
           NATIVEPHP_APPLE_ID_PASS: ${{ secrets.NATIVEPHP_APPLE_ID_PASS }}
           NATIVEPHP_APPLE_TEAM_ID: ${{ secrets.NATIVEPHP_APPLE_TEAM_ID }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v3
         with:
