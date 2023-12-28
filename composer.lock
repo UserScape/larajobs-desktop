@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22ce2943ea0eed19faff808e42600cd6",
+    "content-hash": "e86e018b4f2f2d6f0c2d178291270952",
     "packages": [
         {
             "name": "brick/math",
@@ -2058,8 +2058,14 @@
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/danjohnson95/electron",
-                "reference": "be0d2491aeee05beee793415afa5a2ff8b3c78c5"
+                "url": "https://github.com/NativePHP/electron.git",
+                "reference": "b85fb845c72c0a901c3385807db17507012ae1da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/electron/zipball/b85fb845c72c0a901c3385807db17507012ae1da",
+                "reference": "b85fb845c72c0a901c3385807db17507012ae1da",
+                "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^10.0",
@@ -2099,28 +2105,7 @@
                     "Native\\Electron\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Native\\Electron\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
-                ],
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest --coverage"
-                ],
-                "format": [
-                    "vendor/bin/pint"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2138,7 +2123,10 @@
                 "laravel",
                 "nativephp"
             ],
-            "time": "2023-08-15T21:14:27+00:00"
+            "support": {
+                "source": "https://github.com/NativePHP/electron/tree/main"
+            },
+            "time": "2023-12-28T15:24:53+00:00"
         },
         {
             "name": "nativephp/laravel",
