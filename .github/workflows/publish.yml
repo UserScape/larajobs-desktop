@@ -44,6 +44,7 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_OWNER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NATIVEPHP_UPDATER_ENABLED: true
 
       - uses: actions/upload-artifact@v3
         with:
