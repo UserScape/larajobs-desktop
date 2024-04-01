@@ -58,8 +58,8 @@ return [
         'providers' => [
             'github' => [
                 'driver' => 'github',
-                'repo' => env('GITHUB_REPO'),
-                'owner' => env('GITHUB_OWNER'),
+                'repo' => str_contains(env('GITHUB_REPOSITORY', ''), '/') ? explode('/', env('GITHUB_REPOSITORY'))[1] : env('GITHUB_REPO'),
+                'owner' => str_contains(env('GITHUB_REPOSITORY', ''), '/') ? explode('/', env('GITHUB_REPOSITORY'))[0] : env('GITHUB_OWNER'),
                 'vPrefixedTagName' => true,
                 'token' => env('GITHUB_TOKEN'),
                 'private' => false,

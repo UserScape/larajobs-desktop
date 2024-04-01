@@ -30,8 +30,15 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Prepare Laravel Application
+        run: |
+          cp .env.example .env
+
       - name: Run install
         run: php artisan native:install --force --no-interaction
+
+      - name: Inject App Icon
+        run: cp public/images/icon.png vendor/nativephp/electron/resources/js/build/icon.png
 
       - name: Run build
         run: php artisan native:publish --no-interaction
@@ -41,15 +48,6 @@ jobs:
           NATIVEPHP_APPLE_ID: ${{ secrets.NATIVEPHP_APPLE_ID }}
           NATIVEPHP_APPLE_ID_PASS: ${{ secrets.NATIVEPHP_APPLE_ID_PASS }}
           NATIVEPHP_APPLE_TEAM_ID: ${{ secrets.NATIVEPHP_APPLE_TEAM_ID }}
-          GITHUB_REPO: larajobs-desktop
-          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NATIVEPHP_UPDATER_ENABLED: true
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: |
-            dist/*.dmg
-            dist/*.zip
-            dist/*.yml

@@ -8,7 +8,6 @@ use App\Models\JobTag;
 use App\Events\JobsPosted;
 use App\Services\RSSDataService;
 use Carbon\Carbon;
-use Config;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
